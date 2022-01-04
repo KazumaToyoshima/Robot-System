@@ -16,7 +16,11 @@ static struct class *cls = NULL;
 
 static ssize_t led_write(struct file* flip, const char* buf, size_t count, loff_t* pos)
 {
-	printk(KERN_INFO "led_write is called\n");
+	char c;
+	if(copy_from_user(&c,buf,sizeof(char)))
+	return -EFAULT;
+
+	printk(KERN_INFO "receive %c\n" ,c);
 	return 1;
 }
 
