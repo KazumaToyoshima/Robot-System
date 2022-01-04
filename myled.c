@@ -17,12 +17,14 @@ static int __init init_mod(void)
 		printk(KERN_ERR "alloc_chrdev_region failed.\n");
 		return retval;
 	}	
+		printk(KERN_INFO "%s is loaded. major:%d\n",__FILE__,MAJOR(dev));
 		return 0;
 }
 
 static void __exit cleanup_mod(void)
 {
-	printk(KERN_INFO "%s is unloaded.\n",__FILE__);
+	unregister_chrdev_region(dev, 1);
+	printk(KERN_INFO "%s is loaded. major:%d\n",__FILE__,MAJOR(dev));
 }
 
 module_init(init_mod);
