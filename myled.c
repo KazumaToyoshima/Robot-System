@@ -11,7 +11,18 @@ MODULE_LICENSE("GPL");
 MODULE_VERSION("0.0.1");
 
 static dev_t dev;
-static struct dev_t dev;
+static struct cdev cdv;
+
+static ssize_t led_write(struct file* flip, const char* buf, size_t count, loff_t* pos)
+{
+	printk(KERN_INFO "led_write is called\n");
+	return 1;
+}
+
+static struct file_operations led_fops = {
+	.owner = THIS_MODULE,
+	.write = led_write
+};
 
 static int __init init_mod(void)
 {
