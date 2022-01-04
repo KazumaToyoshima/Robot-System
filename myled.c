@@ -1,5 +1,9 @@
 #include <linux/module.h>
 #include <linux/fs.h>
+#include <linux/cdev.h>
+#include <linux/device.h>
+#include <linux/uaccess.h>
+#include <linux/io.h>
 
 MODULE_AUTHOR("Ryuichi Ueda");
 MODULE_DESCRIPTION("driver for LED control");
@@ -7,6 +11,7 @@ MODULE_LICENSE("GPL");
 MODULE_VERSION("0.0.1");
 
 static dev_t dev;
+static struct dev_t dev;
 
 static int __init init_mod(void)
 {
