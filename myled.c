@@ -21,7 +21,13 @@ static ssize_t led_write(struct file* flip, const char* buf, size_t count, loff_
 	if(copy_from_user(&c,buf,sizeof(char)))
 	return -EFAULT;
 
-	printk(KERN_INFO "receive %c\n" ,c);
+	// printk(KERN_INFO "receive %c\n" ,c);
+	
+	if(c == '0')
+		gpio_base[10] = 1 << 25;
+	else if(c == '1')
+		gpio_base[7] = 1 << 25;
+
 	return 1;
 }
 
