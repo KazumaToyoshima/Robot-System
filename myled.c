@@ -12,6 +12,7 @@ MODULE_VERSION("0.0.1");
 
 static dev_t dev;
 static struct cdev cdv;
+static struct class *cls = NULL;
 
 static ssize_t led_write(struct file* flip, const char* buf, size_t count, loff_t* pos)
 {
@@ -42,13 +43,20 @@ static int __init init_mod(void)
 			return retval;
 		}
 
+		cls = class_create(THIS_MODULE,"myled");
+		if(IS_ERR(cls)){
+			printk(KERN_ERR "class_create failed.");
+			return PTR_ERR(cls);
+		}
 		return 0;
 }
 
 static void __exit cleanup_mod(void)
 {
+	cdev_del(&cdv);
+	class_destroy(cls);
 	unregister_chrdev_region(dev, 1);
-	printk(KERN_INFO "%s is loaded. major:%d\n",__FILE__,MAJOR(dev));
+	printk(KERN_INFO "%s is unloaded. major:%d\n",__FILE__,MAJOR(dev));
 }
 
 module_init(init_mod);
