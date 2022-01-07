@@ -67,6 +67,9 @@ Copyright (c) 2021 Ryuich Ueda
 
 Copyright (c) 2021 Hiroyuki Matsuda
 
+
+Copyright (c) 2021 Kazuma Toyoshima
+
 > This program is free software; you can redistribute it and/or
 > modify it under the terms of the GNU General Public License
 > as published by the Free Software Foundation; either version 2
