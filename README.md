@@ -1,10 +1,40 @@
+# 概要
+
+### ロボットシステム学 課題1
+
+スイッチ入力とLEDの点灯、消灯ができるデバイスドライバの作成
+
 # 開発環境
 
 Ubuntu20.04
 
 Raspberry Pi 4
 
+# 使用した物
+
+ブレッドボード ×１
+
+ジャンパー線（オスメス）×2
+
+LED ×1
+
+抵抗 200Ω ×1
+
+# 回路
+### 全体図
+
+<img src="https://user-images.githubusercontent.com/97030413/148578084-42e949f7-43a5-48d0-949b-9df2f3268ddf.jpeg" width=320>配線の全体図
+
+<img src="https://user-images.githubusercontent.com/97030413/148580509-0151d45c-7558-488b-8692-8948acb0a6ad.jpeg" width=320>ラズパイの配線
+
+<img src="https://user-images.githubusercontent.com/97030413/148580533-3eb21421-c7b9-44e5-a5c7-8e0fdec08625.jpeg" width=320>ブレッドボードの配線
+
+### 回路図
+<img src="https://user-images.githubusercontent.com/97030413/148579748-4dc27a1d-b667-462c-8dcd-537b0410ab4a.jpg" width=320>
+
+
 # 基本的な動作
+
 ### ラズパイを用いたLED点灯プログラム。
  ```
 make
