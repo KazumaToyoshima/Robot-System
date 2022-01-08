@@ -60,6 +60,12 @@ echo 1 > /dev/myled0
 echo 0 > /dev/myled0
  ```
 
+# 協力してくれた方
+
+Thanks for Hiroyuki Matsuda
+
+URL https://github.com/hiro2001
+
  # ライセンス
 
 Copyright (c) 2021 Ryuich Ueda
