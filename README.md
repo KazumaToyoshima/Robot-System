@@ -62,7 +62,7 @@ echo 0 > /dev/myled0
 
 # 協力してくれた方
 
-Thanks for Hiroyuki Matsuda
+Thanks to Hiroyuki Matsuda
 
 URL https://github.com/hiro2001
 
