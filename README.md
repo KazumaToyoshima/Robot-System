@@ -65,9 +65,6 @@ echo 0 > /dev/myled0
 Copyright (c) 2021 Ryuich Ueda
 
 
-Copyright (c) 2021 Hiroyuki Matsuda
-
-
 Copyright (c) 2021 Kazuma Toyoshima
 
 > This program is free software; you can redistribute it and/or
